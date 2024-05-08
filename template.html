@@ -1,0 +1,58 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+</head>
+<body>
+    <div id="container">
+        {% for section in sections %}
+            <div class="section">
+                <div class="docs">
+                    <div class="section-link">
+                        <a href="#{{ section.id }}">#</a>
+                    </div>
+                    <h1>{{ section.title }}</h1>
+                    <div id="description-{{ section.id }}"></div>
+                    <script>
+                        document.getElementById('description-{{ section.id }}').innerHTML = marked(`{{ section.description }}`);
+                    </script>
+                </div>
+                <div class="code">
+                    <pre><code class="hljs">{{ section.code }}</code></pre>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            startup: {
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                    MathJax.startup.promise.then(() => {
+                        document.querySelectorAll('pre code').forEach((block) => {
+                            hljs.highlightBlock(block);
+                        });
+                        MathJax.typesetPromise();
+                    });
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

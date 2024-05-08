@@ -1,0 +1,51 @@
+#container {
+    width: 90%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the flex container */
+    justify-content: space-between; /* Space between the sections */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.docs, .code {
+    flex: 1;  /* Each takes half of the space */
+    padding: 10px;
+    margin: 5px;
+}
+
+.docs {
+    max-width: 50%; /* Limits the description to half of the container */
+}
+
+.code {
+    max-width: 45%; /* Adjusts for padding and margins */
+    background-color: #f7f7f7; /* Light grey background for code */
+    border: 1px solid #eee;
+    overflow-x: auto; /* Allows scrolling horizontally if code is too long */
+}
+
+.highlight {
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    overflow-x: auto;
+}
+
+pre {
+    margin: 0;
+    padding: 10px;
+    white-space: pre-wrap; /* Ensures code wraps */
+    overflow-x: auto; /* Scroll horizontally if needed */
+}
+
+.hljs {
+    background: transparent; /* Keeps the background from the .code style */
+}
+
+.hljs-keyword { font-weight: bold; color: #007020; }
+.hljs-string { color: #4070a0; }
