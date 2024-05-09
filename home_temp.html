@@ -29,28 +29,39 @@
 <body>
     <div id="container">
         <div id="background"></div>
-        {% for section in sections %}
-            <div class="section" id="{{ section.id }}">
-                <div class="docs">
-                    <div class="section-link">
-                        <a href="#{{ section.id }}">#</a>
-                    </div>
-                    <h2>{{ section.title }}</h2>
-                     <div id="description-{{ section.id }}"></div>
-                    <script>
-                        document.getElementById('description-{{ section.id }}').innerHTML = marked(`{{ section.description }}`);
-                    </script>
+        <div class="section">
+        <div class="docs">
+            <p>
+                <a class="parent" href="/">home</a>
+            </p>
+            <p>
+                <a href="https://github.com/Tony-Tan/Reinforcement-Learning" target="_blank">
+                    <img alt="Github" src="https://img.shields.io/github/stars/Tony-Tan/Reinforcement-Learning?style=social" style="max-width:100%;"></a>
+                <a href="https://twitter.com/anthony_s_tan" rel="nofollow" target="_blank">
+                    <img alt="Twitter" src="https://img.shields.io/twitter/follow/anthony_s_tan?style=social" style="max-width:100%;"></a>
+            </p>
+            <p>
+                <a href="https://github.com/Tony-Tan/Reinforcement-Learning" target="_blank">
+                    View code on Github</a>
+            </p>
+        </div>
+    </div>
+
+        <div class="section" id="{{ section.id }}">
+            <div class="docs">
+                <div class="section-link">
+                    <a href="#{{ section.id }}">#</a>
                 </div>
-                <div class="code">
-                    <pre>
-                    <code class="language-{{section.lang}}">
-                        {% for line in section.code %}
-                        <span class="line"><span class="line-number">{{ line.line_num }}</span> <span class="code-content language-{{section.lang}}">{{ line.content }}</span></span>
-                        {% endfor %}
-                    </code></pre>
-                </div>
+                <h2>{{ section.title }}</h2>
+                 <div id="description-{{ section.id }}"></div>
+                <script>
+                    document.getElementById('description-{{ section.id }}').innerHTML = marked(`{{ section.description }}`);
+                </script>
             </div>
-        {% endfor %}
+            <div class="code">
+
+            </div>
+        </div>
     </div>
 <script src="interactive.js"></script>
 <script>

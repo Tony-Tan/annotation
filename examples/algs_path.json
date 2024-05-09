@@ -1,0 +1,20 @@
+{
+  "algorithms": [
+    {
+      "name": "dqn",
+      "script_path": "./examples/dqn_agent.py"
+    },
+    {
+      "name": "double_dqn",
+      "script_path": "./examples/double_dqn_agent.py"
+    },
+    {
+      "name": "dqn_pp",
+      "script_path": "./examples/dqn_pp_agent.py"
+    },
+    {
+      "name": "dueling_dqn",
+      "script_path": "./examples/dueling_dqn_agent.py"
+    }
+  ]
+}
