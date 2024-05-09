@@ -1976,5 +1976,42 @@ body.lights-off .highlight .il {
     color: #7f7f7f;
   }
 }
+pre code {
+    font-family: 'Source Code Pro', monospace; /* 使用专门的代码字体 */
+    background-color: transparent; /* 深色背景 */
+    color: inherit; /* 浅灰色字体颜色 */
+    overflow-x: auto;
+    font-size: 20px; /* 字体大小 */
+    line-height: 0.6; /* 行高为1，确保最小行间距 */
+    white-space: pre; /* 保持空白符 */
+    padding: 10px; /* 适当的内边距 */
+    margin: 0; /* 移除外边距 */
+}
 
-/*# sourceMappingURL=pylit.css.map */
+.line {
+    display: block; /* 每行都是块级元素 */
+    margin: 0; /* 移除外边距 */
+    padding: 0; /* 移除内边距 */
+    line-height: 0; /* 行高为1，确保最小行间距 */
+}
+
+.line-number {
+    display: inline-block; /* 行号显示为内联块 */
+    width: 40px; /* 固定宽度 */
+    color: #888; /* 行号颜色 */
+    text-align: right; /* 行号右对齐 */
+    margin-right: 80px; /* 与代码内容的间隔 */
+    user-select: none; /* 禁止选择文本 */
+    padding-right: 10px;
+    opacity: 0.3;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.code-content {
+    display: inline; /* 代码内容显示为内联 */
+    white-space: pre-wrap; /* 保持格式并允许自动换行 */
+    background: transparent; /* 确保背景透明 */
+    font-family: 'Source Code Pro', monospace; /* 使用专门的代码字体 */
+    font-size: 20px; /* 字体大小 */
+}
