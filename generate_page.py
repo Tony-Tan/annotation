@@ -2,7 +2,7 @@ import jinja2
 
 from code_comment_seg import parse_python_script
 sections = parse_python_script('examples/1.py')
-print(sections)
+
 
 # Setup Jinja2 environment
 env = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath=''))

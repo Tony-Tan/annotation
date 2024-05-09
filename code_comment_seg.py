@@ -77,6 +77,4 @@ def parse_python_script(filename):
 
 # 使用方式：
 
-for s in parse_python_script('examples/1.py'):
-    print(s)
 
