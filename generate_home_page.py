@@ -10,7 +10,7 @@ def generate_home(algorithm_json_path, output_html_path):
         data = json.load(file)
         for algo in data["algorithms"]:
             algo_name = algo["name"]
-            section['description'] += f'[{algo_name}](./{algo_name}.html)\n'
+            section['description'] += f'- [{algo_name}](./{algo_name}.html)\n\n'
     # Setup Jinja2 environment
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath=''))
     template = env.get_template('home_temp.html')
