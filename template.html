@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/contrib/auto-render.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Consolas:wght@400&display=swap" rel="stylesheet">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -27,8 +28,9 @@
 </head>
 <body>
     <div id="container">
+        <div id="background"></div>
         {% for section in sections %}
-            <div class="section">
+            <div class="section" id="{{ section.id }}">
                 <div class="docs">
                     <div class="section-link">
                         <a href="#{{ section.id }}">#</a>
@@ -40,9 +42,10 @@
                     </script>
                 </div>
                 <div class="code">
-                    <pre><code class="language-{{section.lang}}">
+                    <pre>
+                    <code class="language-{{section.lang}}">
                         {% for line in section.code %}
-                        <span class="line">{{ line.line_num }} <span class="code-content language-{{section.lang}}">{{ line.content }}</span></span>
+                        <span class="line"><span class="line-number">{{ line.line_num }}</span> <span class="code-content language-{{section.lang}}">{{ line.content }}</span></span>
                         {% endfor %}
                     </code></pre>
                 </div>
