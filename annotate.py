@@ -20,14 +20,14 @@ def generate_website(json_file, output_dir):
     # 确保输出目录存在
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+    for cat in data["algorithms"]:
+        for algo in data["algorithms"][cat]:
+            algo_name = algo["name"]
+            script_path = algo["script_path"]
+            output_html_path = os.path.join(output_dir, f"{algo_name}.html")
 
-    for algo in data["algorithms"]:
-        algo_name = algo["name"]
-        script_path = algo["script_path"]
-        output_html_path = os.path.join(output_dir, f"{algo_name}.html")
-
-        # 生成每个算法的HTML页面
-        generate_page(script_path, output_html_path)
+            # 生成每个算法的HTML页面
+            generate_page(script_path, output_html_path)
 
 
 # 调用函数
