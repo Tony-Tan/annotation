@@ -1977,6 +1977,18 @@ body.lights-off .highlight .il {
   body.lights-off .highlight .il {
     color: #7f7f7f;
   }
+  /*pre code {*/
+  /*  !*font-family: 'Source Code Pro', monospace;*!*/
+  /*  background-color: transparent;*/
+  /*  color: inherit;*/
+  /*  overflow-x: auto;  !* 允许水平滚动 *!*/
+  /*  !*font-size: 16px;  !* 减小默认字体大小 *!*!*/
+  /*  line-height: 0.2;  !* 提高行高以增加可读性 *!*/
+  /*  padding: 10px;*/
+  /*  margin: 0;*/
+  /*  border: none;*/
+  /*  white-space: pre-wrap;*/
+  /*}*/
 }
 
 
@@ -1987,8 +1999,8 @@ pre code {
     color: inherit;
     overflow-x: auto;  /* 允许水平滚动 */
     /*font-size: 16px;  !* 减小默认字体大小 *!*/
-    line-height: 0.2;  /* 提高行高以增加可读性 */
-    padding: 10px;
+    line-height: 1;  /* 提高行高以增加可读性 */
+    padding: 1px;
     margin: 0;
     border: none;
     white-space: pre-wrap;
@@ -1998,11 +2010,11 @@ pre code {
     display: block;
     margin: 0;
     padding: 0;
-    line-height: 1.3;  /* 确保每行有适当的行高 */
+    line-height: 0.8;  /* 确保每行有适当的行高 */
 
 }
 
-.line-number {
+.hljs-number {
     display: inline-block;
     width: 40px;
     color: #888;
@@ -2011,7 +2023,7 @@ pre code {
     user-select: none;
     padding-right: 10px;
     opacity: 0.3;
-    font-size: 14px;  // 根据需要调整字体大小
+    font-size: 16px;  // 根据需要调整字体大小
     white-space: nowrap;
     font-family: 'Consolas', monospace;  // 使用Consolas字体
 }
@@ -2022,7 +2034,7 @@ pre code {
     white-space: pre-wrap;
     background: transparent;
     font-family: 'Source Code Pro', monospace;
-    font-size: 16px;  /* 统一字体大小 */
+    font-size: 20px;  /* 统一字体大小 */
     padding-left: 10px;  /* 留出行号的空间 */
 
 }
