@@ -21,9 +21,9 @@
                     {left: "$", right: "$", display: false}
                 ]
             });
-            document.querySelectorAll('.code-content').forEach((block) => {
-                hljs.highlightElement(block);
-            });
+            document.querySelectorAll('span.code-content').forEach((block) => {
+                hljs.highlightElement(block); });
+
         });
     </script>
 </head>
@@ -60,12 +60,10 @@
                     </script>
                 </div>
                 <div class="code">
-                    <pre>
-                    <code class="language-{{section.lang}}">
-                        {% for line in section.code %}
+
+                    {% for line in section.code %}
                         <span class="line"><span class="line-number">{{ line.line_num }}</span> <span class="code-content language-{{section.lang}}">{{ line.content }}</span></span>
-                        {% endfor %}
-                    </code></pre>
+                    {% endfor %}
                 </div>
             </div>
         {% endfor %}
@@ -121,7 +119,7 @@
         });
 
         // Initialize highlighting
-        hljs.highlightAll();
+        // hljs.highlightAll();
     </script>
 </body>
 </html>
